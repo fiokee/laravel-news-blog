@@ -5,6 +5,7 @@ use App\Http\Controllers\ContentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+//main website
 Route::get('/', [ContentController::class, 'index']);
     
 
