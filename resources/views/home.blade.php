@@ -94,39 +94,19 @@
   <!-- Hero Section -->
   <div class="container py-4">
     <div class="row g-4">
-      <div class="col-md-4">
-        <a href="page1.html" class="text-decoration-none">
-          <div class="hero-card">
-            <img src="https://images.pexels.com/photos/1161682/pexels-photo-1161682.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
-            <div class="text-overlay">
-              <span class="badge bg-success">LIFESTYLE</span>
-              <h6 class="mt-2">Healthy diet to keep you healthy and strong</h6>
+      @foreach ($blogs as $blog)
+        <div class="col-md-4">
+          <a href="page1.html" class="text-decoration-none">
+            <div class="hero-card">
+              <img src="{{ asset('storage/' . $blog->banner_image) }}" alt="{{ $blog->title }}">
+              <div class="text-overlay">
+                <span class="badge bg-success">LIFESTYLE</span>
+                <h3 class="mt-2">{{ $blog->title }}</h3>
+              </div>
             </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a href="page2.html" class="text-decoration-none">
-          <div class="hero-card">
-            <img src="https://www.pixelstalk.net/wp-content/uploads/images6/COD-Wallpaper-Desktop.jpg" alt="">
-            <div class="text-overlay">
-              <span class="badge bg-danger">GAME</span>
-              <h6 class="mt-2">Call Of Duty: Black Ops 4 Releasing</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a href="page3.html" class="text-decoration-none">
-          <div class="hero-card">
-            <img src="https://media.istockphoto.com/id/1446043855/photo/black-woman-on-road-enjoying-window-view-of-desert-and-traveling-in-jeep-on-holiday-road-trip.jpg?b=1&s=612x612&w=0&k=20&c=_7aLPcUUN1sMMmIUpPPI4BshWkwn5MQuI9FFEHswy34=" alt="">
-            <div class="text-overlay">
-              <span class="badge bg-primary">ENTERTAINMENT</span>
-              <h6 class="mt-2">Here’s How To Get Free Pizza On</h6>
-            </div>
-          </div>
-        </a>
-      </div>
+          </a>
+        </div>
+      @endforeach
     </div>
   </div>
 
@@ -151,7 +131,7 @@
           <div class="card h-100 border-0 shadow-sm">
             <img src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=600/300x200" class="card-img-top" alt="...">
             <div class="card-body">
-              <span class="badge bg-primary mb-2">Tech</span>
+              <span class="badge bg-success mb-2">Tech</span>
               <h6 class="card-title">Your social media apps want to help</h6>
               <p class="card-text small text-muted">5 hours ago | by Tunde Awoniyi</p>
             </div>
@@ -163,7 +143,7 @@
           <div class="card h-100 border-0 shadow-sm">
             <img src="https://images.pexels.com/photos/360438/pexels-photo-360438.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="...">
             <div class="card-body">
-              <span class="badge bg-primary mb-2">Tech</span>
+              <span class="badge bg-danger mb-2">Tech</span>
               <h6 class="card-title">iOS version rages on 2009 swine flu</h6>
               <p class="card-text small text-muted">2 hours ago | by Kenny Okoro</p>
             </div>
