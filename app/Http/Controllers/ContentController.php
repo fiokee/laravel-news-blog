@@ -15,7 +15,7 @@ class ContentController extends Controller
       ->orderBy('created_at', 'DESC')
       ->paginate(6);
 
-      return view('welcome', ['blogs' => $blogs]);
+      return view('home', ['blogs' => $blogs]);
     }
 
     /**
