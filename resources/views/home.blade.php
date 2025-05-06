@@ -65,10 +65,27 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Posts</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Categories</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          {{-- <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Posts</a></li> --}}
+
+          <!-- Laravel Blade Logic for Auth -->
+          @if (Route::has('login'))
+          @auth
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
+            </li>
+          @else
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('login') }}">Log-In</a>
+            </li>
+            @if (Route::has('register'))
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('register') }}">Register</a>
+              </li>
+            @endif
+          @endauth
+        @endif
+        
         </ul>
       </div>
     </div>
@@ -80,7 +97,7 @@
       <div class="col-md-4">
         <a href="page1.html" class="text-decoration-none">
           <div class="hero-card">
-            <img src="https://images.pexels.com/photos/18928743/pexels-photo-18928743/free-photo-of-road-and-houses-in-village.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load/300x200" alt="">
+            <img src="https://images.pexels.com/photos/1161682/pexels-photo-1161682.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
             <div class="text-overlay">
               <span class="badge bg-success">LIFESTYLE</span>
               <h6 class="mt-2">Healthy diet to keep you healthy and strong</h6>
@@ -91,7 +108,7 @@
       <div class="col-md-4">
         <a href="page2.html" class="text-decoration-none">
           <div class="hero-card">
-            <img src="https://images.pexels.com/photos/18778270/pexels-photo-18778270/free-photo-of-top-view-of-bags-with-grain-on-a-bazaar.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load/300x200" alt="">
+            <img src="https://www.pixelstalk.net/wp-content/uploads/images6/COD-Wallpaper-Desktop.jpg" alt="">
             <div class="text-overlay">
               <span class="badge bg-danger">GAME</span>
               <h6 class="mt-2">Call Of Duty: Black Ops 4 Releasing</h6>
@@ -102,7 +119,7 @@
       <div class="col-md-4">
         <a href="page3.html" class="text-decoration-none">
           <div class="hero-card">
-            <img src="https://images.pexels.com/photos/31649556/pexels-photo-31649556/free-photo-of-elegant-model-in-fashionable-black-attire.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load/300x200" alt="">
+            <img src="https://media.istockphoto.com/id/1446043855/photo/black-woman-on-road-enjoying-window-view-of-desert-and-traveling-in-jeep-on-holiday-road-trip.jpg?b=1&s=612x612&w=0&k=20&c=_7aLPcUUN1sMMmIUpPPI4BshWkwn5MQuI9FFEHswy34=" alt="">
             <div class="text-overlay">
               <span class="badge bg-primary">ENTERTAINMENT</span>
               <h6 class="mt-2">Here’s How To Get Free Pizza On</h6>
